@@ -7,7 +7,7 @@ export default function SearchScore() {
     const { data, fetchScore } = useGetScoreBySbd()
 
     return (
-        <div className="p-6 space-y-6">
+        <div className="w-full p-6 space-y-6">
 
             {/* User Registration */}
             <div className="bg-white p-6 rounded-lg shadow">
@@ -18,7 +18,7 @@ export default function SearchScore() {
                 <div className="flex gap-3">
                     <input
                         type="number"
-                        className="border p-2 w-80 rounded"
+                        className="border p-2 w-full rounded"
                         placeholder="Enter registration number"
                         value={registrationNumber}
                         onChange={(e) => setRegistrationNumber(e.target.value)}
