@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "@/constants/api";
 import { useEffect, useState } from "react";
 
 export type TopStudent = {
@@ -16,7 +17,7 @@ export function useGetTop10() {
     try {
       setLoading(true);
 
-      const res = await fetch("http://localhost:8000/api/top10-group-a");
+      const res = await fetch(`${API_BASE_URL}/top10-group-a`);
 
       if (!res.ok) {
         throw new Error("Failed to fetch");

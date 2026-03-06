@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { StatsResponse } from "@/types/stats";
+import { API_BASE_URL } from "@/constants/api";
 
 export function useStats(subject: string) {
   const [data, setData] = useState<StatsResponse | null>(null);
@@ -12,9 +13,7 @@ export function useStats(subject: string) {
       try {
         setLoading(true);
 
-        const res = await fetch(
-          `http://localhost:8000/api/stats?subject=${subject}`,
-        );
+        const res = await fetch(`${API_BASE_URL}/stats?subject=${subject}`);
 
         const json = await res.json();
 

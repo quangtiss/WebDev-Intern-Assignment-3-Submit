@@ -1,3 +1,4 @@
+import { API_BASE_URL } from "@/constants/api";
 import { useState } from "react";
 
 type ScoreData = {
@@ -23,7 +24,7 @@ export default function useGetScoreBySbd() {
     try {
       setLoading(true);
 
-      const res = await fetch(`http://localhost:8000/api/score/${sbd}`);
+      const res = await fetch(`${API_BASE_URL}/score/${sbd}`);
       const result = await res.json();
 
       setData(result);
